@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Fitness Central</title>
+
+    <!-- Bootstrap core CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+    <!-- Custom styles for this template go here -->
+
+    <link rel="stylesheet" href="css/styles.css">
+   
+  </head>
+
+  <body>
+    
+    <div class="jumbotron">
+      <div class="containers">
+        <h1>Welcome to Fitness Central</h1>
+        <p>This is an app where you record your health status per day. You can say this is a nice Health Journal<br><em>Dive right in</em></p>
+
+      </div><!-- /container -->
+    </div><!-- /jumbotron -->
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">  
+          <h2>Mental Health</h2>
+            <p>Your emotional Health is Crucial</p>
+
+                  {% load static %}
+                  <img src="{% static 'img/emohealth.jpg' %}" alt="">
+                  
+          <!-- <img src="C:\Users\eirio\Documents\Web Dev\my_web_project\img\emohealth.jpg" style="height: auto; width: 90%;"> -->
+            <p><a class="btn btn-default" rel="noopener noreferrer" target="_blank" href="https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response" role="button">View more information &raquo;</a></p>
+        </div><!-- /col -->
+
+        <div class="col-md-4">
+          <h2>Physical Health</h2>
+          <p>Your Physical Health is Crucial</p>
+          <img src="{% static 'img/phyhealth.jpg' %}" alt="">
+
+          
+          <p><a class="btn btn-default" rel="noopener noreferrer" target="_blank" href="https://study.com/academy/lesson/what-is-physical-health-definition-components-examples.html" role="button">View more information &raquo;</a></p>
+        </div><!-- /col -->
+        <div class="col-md-4">
+
+          <h2>How do you feel today?</h2>
+
+
+          <form method="POST" action="">
+
+            {% csrf_token %}
+            <div class="form">
+              
+              {{ form.text }}
+    
+              <button class="btn btn-primary active">Submit</button>
+            </div>
+          </form>
+
+        </div><!-- /col -->
+
+      
+      </div><!-- /row -->
+
+
+
+
+        
+         
+          <hr>
+
+        <h3>To view your previously entered records, please click <a href="/app2">Here</a> </h3>
+
+                      
+    </div>
+        
+      <!-- ============================= -->
+    <!-- All your JavaScript comes now -->
+    <!-- ============================= -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
