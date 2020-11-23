@@ -32,14 +32,13 @@
 
         
 
-      </div><!-- /container -->
-    </div><!-- /jumbotron -->
+      </div> <!-- /container -->
+    </div>   <!-- /jumbotron -->
 
     
 
       <table class = " container table table-bordered">
-        <caption>Entries </caption>
-        
+   
 
         <thead class="alert-warning">
           <tr>
@@ -56,7 +55,7 @@
             <td>{{entry.id}}</td>
             <td>{{entry.text}}</td>
             <td>{{ entry.date_posted }}</td>
-            <td><a class="btn btn-sm btn-warning" href="delete/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Delete</a><a class="btn btn-sm btn-warning" href="edit/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td> -->
+            <td><a class="btn btn-sm btn-warning" href="delete/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Delete</a><a class="btn btn-sm btn-warning" href="edit/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td> 
           </tr>          
         
           {% endfor %}

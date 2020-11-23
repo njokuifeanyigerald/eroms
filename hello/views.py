@@ -3,6 +3,8 @@ from .models import Entry
 from .forms import EntryForm
 from django.contrib.auth.decorators import login_required
 
+# Create your views here.
+
 @login_required
 def index(request):
     
@@ -48,17 +50,18 @@ def delete_view(request, id):
 
 @login_required
 def edit_view(request, id):
-    objects = get_object_or_404(Entry, id = id)
-    
+    qs = get_object_or_404(Entry, id = id)
+    form = EntryForm(request.POST or None,request.FILES or None , instance = qs)
     if request.method =='POST':
-        form = EntryForm(request.POST or None, instance = objects)
+        # form = EntryForm(request.POST  , instance = obj)
         if form.is_valid():
             form.save()
             return redirect('add') 
+    # else:
+    #     form = EntryForm()        
+ 
 
-    context  = {
-        'form': form
-    }
+    context = {'form': form}
 
     return render(request, 'hello/edit.html', context)
 
