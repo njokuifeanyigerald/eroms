@@ -36,7 +36,7 @@
             {% csrf_token %} 
             <strong>Confirm you want to delete this item </strong> 
             <input type="submit" value="Yes" /> 
-            <a href="/app2">Cancel </a> 
+            <a href="{% url 'add' %}">Cancel </a> 
         </form> 
     </div> 
 

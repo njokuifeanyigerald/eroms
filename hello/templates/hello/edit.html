@@ -15,7 +15,7 @@
     
     <!-- Custom styles for this template go here -->
 
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
    
   </head>
 
@@ -23,19 +23,19 @@
     
     <div class="jumbotron">
       <div class="containers">
-        <h1>Fitness Central Delete Records</h1>
-        <p>These are the entries you want to have deleted</p>
+        <h1>Fitness Central Edit Records</h1>
+        <p>These are the entries you want to have Edited</p>
 
       </div><!-- /container -->
     </div><!-- /jumbotron -->
 
-    <div class="main"> 
+    <div class="main container"> 
         <!-- Create a Form -->
         <form method="POST"> 
             <!-- Security token by Django -->
             {% csrf_token %}             
             <!-- form as paragraph -->
-            {{ form.as_p }} 
+            {{ form.text }}
             <input type="submit" value="Update"> 
     
         </form> 

@@ -5,7 +5,8 @@ from django.db import models
 
 class Entry(models.Model):       # this is a table called Entry
     text = models.TextField()
-    date_posted = models.DateTimeField(auto_now_add = True)     #automaticaly set the date
+    date_posted = models.DateTimeField(auto_now_add= True)  
+    
         
 
     def __str__(self):

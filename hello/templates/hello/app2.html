@@ -22,11 +22,11 @@
   <body>
 
     <div class = "navbar-nav  ">
-      <h4><a href="/app1">Home</a></h4>
+      <h4><a href="{% url 'home'%}">Home</a></h4>
     </div>
     
     <div class="jumbotron">
-      <div class="containers">
+      <div class="container text-center">
         <h1>Fitness Central Records</h1>
         <h3>These are the entries you have entered</h3>
 
@@ -37,7 +37,7 @@
 
     
 
-      <table class = "table table-bordered">
+      <table class = " container table table-bordered">
         <caption>Entries </caption>
         
 
@@ -50,13 +50,13 @@
           </tr>
         </thead>
         <tbody>
-          {% for entry in entries %}
+          {% for entry in ent %}
 
           <tr>
             <td>{{entry.id}}</td>
             <td>{{entry.text}}</td>
             <td>{{ entry.date_posted }}</td>
-            <td><a class="btn btn-sm btn-warning" href="delete/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Delete</a><a class="btn btn-sm btn-warning" href="edit/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td>
+            <td><a class="btn btn-sm btn-warning" href="delete/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Delete</a><a class="btn btn-sm btn-warning" href="edit/{{entry.id}}"><span class="glyphicon glyphicon-edit"></span>Edit</a></td> -->
           </tr>          
         
           {% endfor %}

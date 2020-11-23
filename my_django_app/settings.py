@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ty^z-p+#ga=xeh@!t)xwbht75mha&8xshpokx(xi)^$!z4@)bw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS =  ['localhost', '127.0.0.1']
 
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hello',
+    'accounts',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -83,15 +85,12 @@ WSGI_APPLICATION = 'my_django_app.wsgi.application'
 
 
 DATABASES = {
-
     'default': {
-        
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'eroms',
         'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': '12345',
+        'HOST': 'localhost'
     }
 }
 
@@ -138,3 +137,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR/ "static"
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTHENTICATION_BACKENDS = ['accounts.backend.EmailBackend']
+
+LOGIN_REDIRECT_URL = '/add'
+LOGOUT_REDIRECT_URL = '/'
